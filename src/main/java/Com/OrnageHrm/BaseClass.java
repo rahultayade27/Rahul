@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	
-	 static WebDriver driver;
+	 protected static WebDriver driver;
 
 	public static void launchBrowser(String browserName) {
 		
@@ -35,7 +35,7 @@ public class BaseClass {
 		}
 
 		}
-	  public static void login(String username,String password)
+	  public void login(String username,String password)
 	  {
 		  driver.findElement(By.id("txtUsername")).sendKeys(username);
 		  driver.findElement(By.id("txtPassword")).sendKeys(password);
