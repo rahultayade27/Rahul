@@ -13,7 +13,7 @@ public class DropDownExample extends BaseClass {
 	
 	driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
 	
-	login("Admin","admin123");
+	Orangehrmlogin.login("Admin","admin123");
 	
 	driver.findElement(By.id("menu_pim_viewPimModule")).click();
 	

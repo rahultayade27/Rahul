@@ -14,7 +14,7 @@ public class waitExample extends BaseClass {
 		//implicitywait
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://opensource-demo.orangehrmlive.com");
-       BaseClass .login("Admin", "admin123");
+		Orangehrmlogin .login("Admin", "admin123");
        driver.findElement(By.id("welcome")).click();
        
        //Explicitywait
