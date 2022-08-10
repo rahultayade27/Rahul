@@ -7,16 +7,18 @@ import Com.OrnageHrm.util;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 public class Addcompany  extends BaseClass{
   
   @BeforeClass
-  public void beforeClass()
+  @Parameters({"username","password","browser","url"})
+  public void beforeClass(String username,String password,String browser,String url )
  {
-	launchBrowser("chrome") ;
-	driver.get("https://realestateautomation.agilecrm.com/");
+	launchBrowser(browser) ;
+	driver.get(url);
 	AgileCRMlogin agilecrmlogin=new AgileCRMlogin();
-	agilecrmlogin.agilelogin("automation@yopmail.com","Test1234");
+	agilecrmlogin.agilelogin(username,password);
 	
   }
   @Test
@@ -24,12 +26,12 @@ public class Addcompany  extends BaseClass{
 	  driver.findElement(By.id("companiesmenu")).click();
 	  driver.findElement(By.xpath("//button[contains(@class,\"btn btn-default btn\")]")).click();
 	  util.waitforElementToBeClick(By.id("company_name"));
-	  driver.findElement(By.id("company_name")).sendKeys("TCS");
+	  driver.findElement(By.id("company_name")).sendKeys("TCccsqs");
 	  driver.findElement(By.id("company_url")).sendKeys("www.TCS.com");
 	  driver.findElement(By.id("company_validate")).click();
 	  
-	  
-	  
-  }
-
+	
+	
+}
+    
 }
